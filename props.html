@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const root = document.getElementById("root");
+
+      function Btn(props) {
+        return (
+          <button
+            onClick={props.onClick}
+            style={{
+              backgroundColor: "tomato",
+              color: "white",
+              padding: "10px 20px",
+              borderRadius: 0,
+              border: "none",
+              fontSize: "16px"
+            }}
+          >
+            {props.text}
+          </button>
+        );
+      }
+      const MemorizedBtn=React.memo(Btn)
+      function App() {
+        const [value, setValue] = React.useState("Save Changes");
+        const changeValue = () => setValue("Revert Changes");
+
+        return (
+          <div>
+            <Btn text={value} onClick={changeValue} />
+            <hr />
+            <Btn text="Not" />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>
