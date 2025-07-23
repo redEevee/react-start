@@ -1,18 +1,17 @@
 <html lang="en">
-<body>
+  <body>
     <span>total click:0</span>
     <button id="btn">click me</button>
-</body>
-<script>
-    let cnt=0;
-    const button= document.getElementById("btn");
-    const span =document.querySelector("span");
-    function handleclick()
-    {
-        console.log("click");
-        cnt=cnt+1;
-        span.innerText=`total click: ${cnt}`
-        }
-    button.addEventListener("click",handleclick);
-</script>
-</html> 
+  </body>
+  <script>
+    let cnt = 0;
+    const button = document.getElementById("btn");
+    const span = document.querySelector("span");
+    function handleclick() {
+      console.log("click");
+      cnt = cnt + 1;
+      span.innerText = `total click: ${cnt}`;
+    }
+    button.addEventListener("click", handleclick);
+  </script>
+</html>
